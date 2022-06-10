@@ -1,0 +1,25 @@
+INSERT INTO regiones (id,sigla,detalle) values (1,'I','Región de Tarapacá');
+INSERT INTO regiones (id,sigla,detalle) values (2,'II','Región de Antofagasta');
+INSERT INTO regiones (id,sigla,detalle) values (3,'III','Región de Atacama');
+INSERT INTO regiones (id,sigla,detalle) values (4,'IV','Región de Coquimbo');
+INSERT INTO regiones (id,sigla,detalle) values (5,'V','Región de Valparaíso');
+INSERT INTO regiones (id,sigla,detalle) values (6,'VI','Región del Libertador General Bernardo O’Higgins');
+INSERT INTO regiones (id,sigla,detalle) values (7,'VII','Región del Maule');
+INSERT INTO regiones (id,sigla,detalle) values (8,'VIII','Región del Biobío');
+INSERT INTO regiones (id,sigla,detalle) values (9,'IX','Región de La Araucanía');
+INSERT INTO regiones (id,sigla,detalle) values (10,'X','Región de Los Lagos');
+INSERT INTO regiones (id,sigla,detalle) values (11,'XI','Región Aysén del General Carlos Ibáñez del Campo');
+INSERT INTO regiones (id,sigla,detalle) values (12,'XII','Región de Magallanes y Antártica Chilena');
+INSERT INTO regiones (id,sigla,detalle) values (13,'XIII','Región Metropolitana de Santiago');
+INSERT INTO regiones (id,sigla,detalle) values (14,'XIV','Región de Los Ríos');
+INSERT INTO regiones (id,sigla,detalle) values (15,'XV','Región de Arica y Parinacota');
+INSERT INTO regiones (id,sigla,detalle) values (16,'XVI','Región de Ñuble');
+INSERT INTO curso (id,nombre,imagen,fecinicio,fectermino,cupos,descripcion) VALUES (1,'FullStack Java','https://sprintcv.s3.amazonaws.com/uploads/job/featured_image/1/large_european-commission-java-full-stack-developer.jpg','2022-06-02',40,'FullStack Java');
+INSERT INTO curso (id,nombre,imagen,fecinicio,fectermino,cupos,descripcion) VALUES (2,'FullStack Rubi','https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/129980775/original/76822a3e3ef1491981898f33a7771ac4cc7cb1d7/develop-full-stack-ruby-on-rails-applications.png','2022-06-02','2022-06-02',30,'FullStack Rubi');
+INSERT INTO curso (id,nombre,imagen,fecinicio,fectermino,cupos,descripcion) VALUES (3,'Dev. Fronted ','	https://img.freepik.com/vector-gratis/encabezado-tipografico-desarrollador-front-end_277904-11487.jpg?w=1800','2022-06-02','2022-06-02',25,'FullStack Rubi');
+
+INSERT INTO estudiante (rut, password,enabled, nombre, telefono,direccion,email,id_region,id_curso,edad) values ('150710707','1234',1,'javier', '98563248','Calle1','jarayatabilo@gmail.com',6,0,18);
+INSERT INTO estudiante (rut, password,enabled, nombre, telefono,direccion,email,id_region,id_curso,edad) values ('123456789','1234',2,'admin', '975632454','Calle2','administracion@gmail.com',8,1,28);
+INSERT INTO authorities (username, authority) values ('150710707','USER');
+INSERT INTO authorities (username, authority) values ('150710707','ADMIN');
+INSERT INTO authorities (username, authority) values ('admin','ADMIN');
