@@ -1,11 +1,11 @@
-<!DOCTYPE html>
-<html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link data-th-href="@{/css/bootstrap.min.css}" rel="stylesheet">
-    <link data-th-href="@{/css/main.css}" rel="stylesheet">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+<title>Sistema Certificación</title>
+<link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
 </head>
 <body>
 
@@ -31,7 +31,7 @@
                 <td>[[${cur.fectermino}]]</td>
                  <td>[[${cur.descripcion}]]</td>
                  
-                <td><a th:href="@{/obtiene/{id}(id=${cur.id})}">Ver </a> 
+                <td><a class="btn btn-success" th:href="@{/obtiene/{id}(id=${cur.id})}">Ver </a> 
                  
             </tr>
             </tbody>

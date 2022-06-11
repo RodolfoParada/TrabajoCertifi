@@ -78,10 +78,12 @@ public class LoginController {
 	
 	@GetMapping("/home")
 	@PreAuthorize("isAuthenticated()")
-    public String homeCursos() {
-		
+    public String homeCursos(final Model model ) {
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		String role = auth.getAuthorities().toString();
+		String rut = auth.getName();
+		model.addAttribute("curso", serviceEst.obtenerCurso(rut));
+		model.addAttribute("estudiante", serviceEst.obtenerEstudiante(rut));
 		if (role.contains("ADMIN")) {
 		            return "redirect:/admin";
 		} else  {
@@ -103,9 +105,17 @@ public class LoginController {
     public String adminCursos(final Model model) {
 		model.addAttribute("cursos", serviceCurso.obtenerCursos());
         return "indexAdmin";
-    }
+	}
 	
-	@GetMapping("{tab}")
+	@GetMapping("/mostrarCurso")
+	@PreAuthorize("isAuthenticated()")
+    public String mostrarCursos(final Model model) {
+		model.addAttribute("cursos", serviceCurso.obtenerCursos());
+        return "mostrarCurso";
+	}
+}
+	
+/*	@GetMapping("{tab}")
     public String tab(@PathVariable String tab,final Model model) {
 			String retorno="empty";
         	if(tab.equals("tab1")) {
@@ -128,3 +138,4 @@ public class LoginController {
 	
 	
 }
+        */

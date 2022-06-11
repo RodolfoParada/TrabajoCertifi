@@ -37,10 +37,12 @@
     </div>
 </nav>
 <div class="container">
-<h2>Bienvenido Administrador</h2>
-			
+<h2>Tab2</h2>
+
 	<div class="row">
+	 <a th:href="@{/admin/crearCurso}">Crear</a> 
          <table id="allEstud" class="table table-striped">
+            
             <thead>
             <tr>
                 <th width="20%">Nombre</th>
@@ -58,14 +60,15 @@
                 <td>[[${cur.fectermino}]]</td>
                  <td>[[${cur.descripcion}]]</td>
                  
-                <td><a th:href="@{/obtiene/{id}(id=${cur.id})}">Ver </a>
-                <a th:href="@{/admin/editarCurso/{id}(id=${cur.id})}"> Editar</a></td> 
-                 <td><a th:href="@{/admin/eliminarCurso/{id}(id=${cur.id})}"> Eliminar</a> 
-                <a th:href="@{/admin/agregarContenido/{id}(id=${cur.id})}"> AddContenido</a></td> 
-                 
+                <td><a th:href="@{/obtiene/{id}(id=${cur.id})}">Ver</a> 
+                <td><a th:href="@{/admin/eliminarCurso/{id}(id=${cur.id})}">Eliminar</a> 
+                <td><a th:href="@{/admin/editarCurso/{id}(id=${cur.id})}">editar</a> 
+                <td><a th:href="@{/admin/agregarContenido/{id}(id=${cur.id})}">Agregar Contenido</a> 
             </tr>
             </tbody>
         </table>
     </div>
-    <a th:href="@{/admin/crearCurso/}">Crear</a>
+    
 </div>
+</body>
+</html>

@@ -83,7 +83,7 @@ public class CursosController {
 		
 		service.eliminarContenido(id);
 
-        return "redirect:/admin/";
+        return "redirect:/admin";
 	}
 	
 	
@@ -136,4 +136,6 @@ public class CursosController {
 		    
 		return "redirect:/home";
 	}
+
+	
 }

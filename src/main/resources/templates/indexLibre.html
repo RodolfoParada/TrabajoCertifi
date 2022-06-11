@@ -39,52 +39,19 @@
 <div class="container">
 <h2>Bienvenido</h2>
 			
-	<div class="row">
-         <table id="allEstud" class="table table-striped">
-            <thead>
-            <tr>
-                <th width="20%">Nombre</th>
-                <th>Fecha Inicio</th>
-                <th>Fecha Termino</th>
-                <th>Descripcion</th>
-                <th>Accion</th>
-                
-            </tr>
-            </thead>
-            <tbody>
-            <tr class="result" data-th-each="cur : ${cursos}">
-                <td>[[${cur.nombre}]]</td>
-                <td>[[${cur.fecinicio}]]</td>
-                <td>[[${cur.fectermino}]]</td>
-                 <td>[[${cur.descripcion}]]</td>
-                 
-                <td><a th:href="@{/obtiene/{id}(id=${cur.id})}">Ver </a>
-            </tr>
-            </tbody>
-        </table>
-        <nav aria-label="Pagination" th:if="${cursos.totalPages gt 0}">
-    <ul class="pagination justify-content-center font-weight-bold">
-        <li class="page-item" th:classappend="${cursos.number eq 0} ? 'disabled'">
-            <a class="page-link"
-               th:href="@{/pagina/{id}(id=${cursos.number lt 2 ? 1 : cursos.number})}"
-               aria-label="Previous" title="Previous Page" data-toggle="tooltip">
-                <span aria-hidden="true">&laquo;</span>
-            </a>
-        </li>
-        <li class="page-item" th:classappend="${i eq cursos.number + 1} ? 'active'"
-            th:each="i : ${#numbers.sequence( 1, cursos.totalPages, 1)}">
-            <a class="page-link" th:href="@{/pagina/{id}(id=${i})}" th:text="${i}"
-               th:title="${'Page '+ i}" data-toggle="tooltip"></a>
-        </li>
-        <li class="page-item" th:classappend="${cursos.number + 1 eq cursos.totalPages} ? 'disabled'">
-            <a class="page-link"
-               th:href="@{/pagina/{id}(id=${cursos.number + 2})}"
-               aria-label="Next" title="Next Page" data-toggle="tooltip">
-                <span aria-hidden="true">&raquo;</span>
-            </a>
-        </li>
-    </ul>
-</nav>
-    </div>
-    
-</div>
+	<div class="cursos" th:each="cur : ${cursos}">
+	           <div class=" item post-box" >
+	             <div class="post-img"><img th:src="${cur.imagen}" height="250px" class="img" alt=""></div>
+	             <div class="meta">
+	               <span class="post-author">Inicia</span>
+	               <span class="post-date">[[${cur.fecinicio}]]</span>
+	               <span class="post-author"> Termina</span>
+	               <span class="post-date">[[${cur.fectermino}]]</span>
+	               <a th:href="@{/obtiene/{id}(id=${cur.id})}" class="btn btn-primary">Ver </a>	
+	             </div>
+ 
+   
+
+
+</body>
+</html>
