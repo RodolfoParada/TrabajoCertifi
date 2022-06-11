@@ -7,7 +7,14 @@
 <meta name="author" content="">
 <title>Sistema Certificación</title>
 <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
-
+<style>
+body{
+background-color:#F5F5DC;
+}
+footer{
+	background-color:#F5F5DC;
+}
+</style>
 </head>
 <body>
 <div class="container">
@@ -20,7 +27,7 @@
    	<div class="col">
         <form action="#" th:action="@{/guardar}" th:object="${estudiante}" method="post">
 			 <fieldset>
-                    <legend>Account Information</legend>
+                    <legend>Información de la Cuenta</legend>
 
                     <div class="row">
                         <div class="col-5">

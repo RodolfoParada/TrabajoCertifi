@@ -1,4 +1,3 @@
-<!DOCTYPE HTML>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="utf-8">
@@ -15,7 +14,6 @@ footer{
 	background-color:#F5F5DC;
 }
 </style>
-
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
@@ -29,54 +27,18 @@ footer{
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Home
+                    <a class="nav-link" href="">Home
                         <span class="sr-only">(current)</span>
                     </a>
                 </li>
+               
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Registrate</a>
+                    <a class="nav-link" href="/registrate">Registrate</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Cursos Disponibles</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/logout">Logout</a>
+                    <a class="nav-link" href="/home">Autenticate</a>
                 </li>
             </ul>
         </div>
     </div>
 </nav>
-
-
-<div class="container">
-
-    <div class="row">
-        <div id="title">
-            <h1>Detalle Curso</h1>
-        </div>
-       
-    </div>
-    <div class="row">
-       <table id="Curso Detail" class="table table-striped">
-            <thead>
-            <tr>
-                <th>ID</th>
-                <th>Nombre</th>
-                <th>Imagen</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr class="result">
-                <td><h4 th:text="${curso.id}" id="id"/></td>
-                <td><h4 th:text="${curso.nombre}" id="name"/></td>   
-                <td><img th:src="@{${curso.imagen}}"/></td>
-            </tr>
-            </tbody>
-        </table>
-    </div>
-
-    <a th:href="@{/asignarCurso/{id}(id=${curso.id})}" class="btn btn-primary">Asignar </a>	
-    <span style="color:red" th:text="${mensaje}"></span>
-</div>
-</body>
-</html>

@@ -6,6 +6,14 @@
 <meta name="author" content="">
 <title>Sistema Certificación</title>
 <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
+<style>
+body{
+background-color:#F5F5DC;
+}
+footer{
+	background-color:#F5F5DC;
+}
+</style>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
@@ -20,9 +28,9 @@
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">
                     <a class="nav-link" href="#">Home
-                        <span class="sr-only">(current)</span>
-                    </a>
+                        <span class="sr-only">(current)</span></a>
                 </li>
+                
                 <li class="nav-item">
                     <a class="nav-link" href="#">About</a>
                 </li>
@@ -37,10 +45,12 @@
     </div>
 </nav>
 <div class="container">
-<h2>Tab2</h2>
+<h2>Administranistración</h2>
+<h4>Bienvenido administrador</h4>
 
 	<div class="row">
-	 <a th:href="@{/admin/crearCurso}">Crear</a> 
+	 <a th:href="@{/admin/crearCurso}" class="btn btn-primary">Crear</a> 
+	 
          <table id="allEstud" class="table table-striped">
             
             <thead>
@@ -60,10 +70,11 @@
                 <td>[[${cur.fectermino}]]</td>
                  <td>[[${cur.descripcion}]]</td>
                  
-                <td><a th:href="@{/obtiene/{id}(id=${cur.id})}">Ver</a> 
-                <td><a th:href="@{/admin/eliminarCurso/{id}(id=${cur.id})}">Eliminar</a> 
-                <td><a th:href="@{/admin/editarCurso/{id}(id=${cur.id})}">editar</a> 
-                <td><a th:href="@{/admin/agregarContenido/{id}(id=${cur.id})}">Agregar Contenido</a> 
+               
+                <td><a th:href="@{/obtiene/{id}(id=${cur.id})}" class="btn btn-primary">Ver</a> 
+                <td><a th:href="@{/admin/eliminarCurso/{id}(id=${cur.id})}" class="btn btn-primary">Eliminar</a> 
+                <td><a th:href="@{/admin/editarCurso/{id}(id=${cur.id})}" class="btn btn-primary">Editar</a> 
+                <td><a th:href="@{/admin/agregarContenido/{id}(id=${cur.id})}" class="btn btn-primary">Agregar Contenido </a>	
             </tr>
             </tbody>
         </table>

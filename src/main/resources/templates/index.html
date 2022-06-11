@@ -5,6 +5,14 @@
     <title>Spring Boot Thymeleaf Application - Bootstrap Tabs</title>
 
     <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
+   <style>
+body{
+background-color:#F5F5DC;
+}
+footer{
+	background-color:#F5F5DC;
+}
+</Style>
 </head>
 <body>
 
@@ -28,7 +36,7 @@
                     <a class="nav-link" href="#">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/mostrarCurso">Curso</a>
+                    <a class="nav-link" href="/mostrarCurso">Cursos</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/logout">Logout</a>
@@ -38,10 +46,15 @@
     </div>
 </nav>
 
+>
+
+</div>
 <div class="container">
- <div class= " Con" th:if="${estudiante.idCurso == 0}">
-   <h2>No tiene registrado ningun curso, para inscribirse a un cuso
-   presione <a class="nav-link" href="/mostrarCurso">Aqui</a> </h2>
+ <div class="Con" th:if="${estudiante.idCurso > 0}">
+    <h1>Panel Estudiante</h1> <br> 
+   <h4>No estás inscrito en ningún curso, puedes</h4>
+   <h4>revisar nuestros cursos disponibles desde</h3>
+   <a class="nav-link" href="/mostrarCurso">Aqui</a>
 </div>
 	<div class="row">
 	<div class="col-6">
